@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.agildata</groupId>
+	<artifactId>apache-spark-java-examples</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+
+	<properties>
+		<exec-maven-plugin.version>1.4.0</exec-maven-plugin.version>
+		<spark.version>2.3.0</spark.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.12</artifactId>
+			<version>2.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.12</artifactId>
+			<version>2.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-mllib_2.12</artifactId>
+			<version>2.4.1</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_2.12</artifactId>
+			<version>2.4.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-graphx_2.12</artifactId>
+			<version>2.4.1</version>
+		</dependency>
+
+
+
+
+
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<argLine>-Xmx1024m</argLine>
+				</configuration>
+
+
+			</plugin>
+
+			<!-- <plugin> <groupId>net.alchim31.maven</groupId> <artifactId>scala-maven-plugin</artifactId> 
+				<executions> <execution> <id>scala-compile-first</id> <phase>process-resources</phase> 
+				<goals> <goal>add-source</goal> <goal>compile</goal> </goals> </execution> 
+				<execution> <id>scala-test-compile</id> <phase>process-test-resources</phase> 
+				<goals> <goal>testCompile</goal> </goals> </execution> </executions> </plugin> -->
+
+		</plugins>
+	</build>
+	<!-- <build> <outputDirectory>target/scala-2.11/classes</outputDirectory> 
+		<testOutputDirectory>target/scala-2.11/test-classes</testOutputDirectory> 
+		<plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-deploy-plugin</artifactId> 
+		<configuration> <skip>true</skip> </configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-install-plugin</artifactId> <configuration> <skip>true</skip> 
+		</configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-jar-plugin</artifactId> <configuration> <outputDirectory>${jars.target.dir}</outputDirectory> 
+		</configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-compiler-plugin</artifactId> <version>3.2</version> <configuration> 
+		<source>1.8</source> <target>1.8</target> <argLine>-Xmx1024m</argLine> </configuration> 
+		</plugin> </plugins> </build> -->
+
+</project>
